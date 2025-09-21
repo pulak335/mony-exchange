@@ -31,7 +31,7 @@ export default function Careers() {
       type: 'Full-time',
       description: 'Join our finance team to analyze market trends, assess financial risks, and contribute to our strategic financial planning.',
       requirements: [
-        'Bachelor\'s degree in Finance, Economics, or related field',
+        'Bachelor&apos;s degree in Finance, Economics, or related field',
         '3+ years of experience in financial analysis, preferably in FinTech',
         'Strong analytical and quantitative skills',
         'Proficiency in financial modeling and data analysis tools (e.g., Excel, SQL)',
@@ -99,7 +99,7 @@ export default function Careers() {
               {
                 icon: '🌱',
                 title: 'Growth Opportunities',
-                description: 'We invest in our employees\' development with continuous learning and career advancement.',
+                description: 'We invest in our employees&apos; development with continuous learning and career advancement.',
               },
               {
                 icon: '💡',
@@ -200,8 +200,8 @@ export default function Careers() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-2xl font-bold mb-4">Can't Find Your Role?</h2>
-          <p className="text-lg mb-6 max-w-2xl mx-auto">We're always growing! Send us your resume, and we'll keep you in mind for future opportunities.</p>
+          <h2 className="text-2xl font-bold mb-4">Can&apos;t Find Your Role?</h2>
+          <p className="text-lg mb-6 max-w-2xl mx-auto">We&apos;re always growing! Send us your resume, and we&apos;ll keep you in mind for future opportunities.</p>
           <Link href="/contact" className="inline-block bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition duration-300">
             Submit Your Resume
           </Link>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ReduxProvider } from "@/lib/redux";
+import { AuthProvider } from "@/lib/auth/AuthContext";
+import AuthSessionProvider from "@/components/AuthSessionProvider";
 import MainLayout from "@/components/layout/MainLayout";
 import "./globals.css";
 
@@ -30,11 +32,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ReduxProvider>
-          <MainLayout>
-            {children}
-          </MainLayout>
-        </ReduxProvider>
+        <AuthProvider>
+          <AuthSessionProvider>
+            <ReduxProvider>
+              <MainLayout>
+                {children}
+              </MainLayout>
+            </ReduxProvider>
+          </AuthSessionProvider>
+        </AuthProvider>
       </body>
     </html>
   );

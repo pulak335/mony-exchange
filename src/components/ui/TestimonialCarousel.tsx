@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Testimonial = {
@@ -26,7 +25,7 @@ const testimonials: Testimonial[] = [
     role: 'CFO',
     company: 'TechGlobal Inc.',
     image: '/testimonials/person1.jpg', // You'll need to add these images to your public folder
-    quote: 'MoneyExchange has transformed how our company handles international payments. The rates are competitive and the service is lightning fast.',
+    quote: 'MoneyExchange has transformed how our company handles international payments. The rates are competitive and the service is lightning fast.'
   },
   {
     id: 2,
@@ -34,7 +33,7 @@ const testimonials: Testimonial[] = [
     role: 'Entrepreneur',
     company: 'Startup Ventures',
     image: '/testimonials/person2.jpg',
-    quote: 'As someone who frequently transfers money internationally, I can confidently say that MoneyExchange offers the best service I have experienced.',
+    quote: 'MoneyExchange has transformed how our company handles international payments. The rates are competitive and the service is lightning fast.'
   },
   {
     id: 3,
@@ -42,7 +41,7 @@ const testimonials: Testimonial[] = [
     role: 'Finance Director',
     company: 'Global Retail Ltd.',
     image: '/testimonials/person3.jpg',
-    quote: 'The transparency and security provided by MoneyExchange give us peace of mind when handling our international transactions.',
+    quote: 'The transparency and security provided by MoneyExchange give us peace of mind when handling our international transactions.'
   },
 ];
 
@@ -101,7 +100,7 @@ const TestimonialCarousel = () => {
                 </div>
                 <div className="flex-1">
                   <blockquote className="text-xl italic text-gray-800 mb-4">
-                    "{testimonials[currentTestimonial].quote}"
+                    &quot;{testimonials[currentTestimonial].quote}&quot;
                   </blockquote>
                   <div className="flex items-center">
                     <div>
@@ -127,24 +126,7 @@ const TestimonialCarousel = () => {
           </div>
         </div>
         
-        {/* Partner Logos */}
-        <div className="mt-16">
-          <h3 className="text-xl font-semibold text-center text-gray-800 mb-8">Trusted by Companies Worldwide</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {partnerLogos.map((logo) => (
-              <motion.div
-                key={logo.id}
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all"
-              >
-                {/* Placeholder for company logo */}
-                <div className="h-12 w-full bg-gray-200 rounded flex items-center justify-center">
-                  <span className="text-gray-500 font-medium">{logo.name}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+
       </div>
     </div>
   );

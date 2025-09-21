@@ -1,15 +1,25 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import uiReducer from './features/uiSlice';
+import authReducer from './features/authSlice';
+import transactionReducer from './features/transactionSlice';
+import exchangeReducer from './features/exchangeSlice';
+import { listenerMiddleware } from './middleware';
 
 export const store = configureStore({
   reducer: {
     ui: uiReducer,
+    auth: authReducer,
+    transactions: transactionReducer,
+    exchange: exchangeReducer,
   },
-  // Adding the api middleware enables caching, invalidation, polling,
-  // and other useful features of `rtk-query`.
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware(),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+      },
+    }).prepend(listenerMiddleware.middleware),
+  devTools: process.env.NODE_ENV !== 'production',
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
